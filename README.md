@@ -32,12 +32,35 @@ My initial hypothesis is that hypertension driver of stroke.
 
 # Data Dictionary
 
+|   Target Variable |Description|
+| ------------- | -------------: | 
+|       stroke    |  If the patient has a stroke or not. (1 = yes, 0 = no)     | 
+|
+|
+
+
+| Feature    | Description    | 
+| :------------- | -------------: | 
+|      id     |   unique identifier      | 
+|   gender       |    Gender of patient Male or Female or Other     | 
+| age|     age of the patient     | 
+|      hypertension    |     If a patient has hypertension  (1 = yes, 0 = no)  | 
+|      hear_disease     |     If a patient has any heart diseases  (1 = yes, 0 = no)  | 
+|       ever_married   |   If a patient has ever been married (1 = yes, 0 = no)      | 
+|    work_type       |    The work type of patient. *Children are under children category     | 
+|  residence_type        |     If a patient residence is  rural of urban   | 
+|   avg_glucose_level        |    average glucose level in blood     | 
+|     bmi     |   body mass index of patient      | 
+|   smoking_status       |    smoking status of patient * Unknown represent the information was unavailable     | 
+|          |         | 
 
 # Steps to Reproduce
     1. Clone this repository
     2. Get Telco Churn data in a csv from Kaggle: 
         https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset?select=healthcare-dataset-stroke-data.csv
+
     3. Save file in cloned repository
+    
     4. Run notebook
 # Takeaways and Conclusions
 
