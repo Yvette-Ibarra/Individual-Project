@@ -8,7 +8,7 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree, export_text
 from sklearn.model_selection import train_test_split
 
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
+
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 
@@ -99,3 +99,138 @@ def model_prep(train,validate,test, modeling_features):
     return X_train,y_train,X_validate,y_validate, X_test, y_test
 
 ################################################ Models ###################################
+
+
+def models_metrics(X_train,y_train, X_validate, y_validate): 
+    '''
+    models_metrics takes in X_train,y_train, X_validate, y_validate 
+    makes 4 models : Decision tree, Random Forest, KNN neighbor, logistic regression
+    fits models using train
+    calculates accuracy and recall for train and validate data 
+    returns metrics in a dataframe of models performance on train and validate data 
+    '''  
+    metrics= []
+    # make tree model
+    tree = DecisionTreeClassifier(max_depth=6, random_state=123)
+    # Fit the model (on train and only train)
+    tree = tree.fit(X_train, y_train)
+
+    # accuracy on train
+    in_sample_accuracy = tree.score(X_train, y_train)
+    # accuracy on validate
+    out_of_sample_accuracy = tree.score(X_validate, y_validate)
+
+    # calculate recall train
+    y_pred = tree.predict(X_train)
+    in_sample_recall= recall_score(y_train, y_pred)  
+
+    # calculate recall validate
+    y_pred = tree.predict(X_validate)
+    out_of_sample_recall= recall_score(y_validate, y_pred)
+
+    output = {
+        'Model': 'Decision Tree',
+        "specs":'Max Depth = 6 ',
+        "train_accuracy": in_sample_accuracy,
+        "validate_accuracy": out_of_sample_accuracy,
+        'train_recall': in_sample_recall,
+        'validate_recall': out_of_sample_recall
+    }
+
+    metrics.append(output)
+
+    # Make the model
+    random_forest = RandomForestClassifier(max_depth=8, min_samples_leaf = 1 , random_state=123)
+
+    # Fit the model (on train and only train)
+    random_forest = random_forest.fit(X_train, y_train)
+
+    # accuracy on train
+    in_sample_accuracy = random_forest.score(X_train, y_train)
+    # accuracy on validate
+    out_of_sample_accuracy = random_forest.score(X_validate, y_validate)
+
+    # calculate recall train
+    y_pred = random_forest.predict(X_train)
+    in_sample_recall= recall_score(y_train, y_pred)  
+
+    # calculate recall validate
+    y_pred = random_forest.predict(X_validate)
+    out_of_sample_recall= recall_score(y_validate, y_pred)
+
+
+    output = {
+        'Model': 'RandomForest',
+        "specs":'Max Depth = 8,min_sample_leaf =1 ',
+        "train_accuracy": in_sample_accuracy,
+        "validate_accuracy": out_of_sample_accuracy,
+        'train_recall': in_sample_recall,
+        'validate_recall': out_of_sample_recall
+    }
+
+    metrics.append(output)
+
+
+
+    # create Knn model   
+    knn = KNeighborsClassifier(n_neighbors=7, weights='uniform')
+    # Knn fit model
+    knn.fit(X_train, y_train)
+
+    # accuracy on train
+    in_sample_accuracy = knn.score(X_train, y_train)
+    # accuracy on validate
+    out_of_sample_accuracy = knn.score(X_validate, y_validate)
+
+    # calculate recall train
+    y_pred = knn.predict(X_train)
+    in_sample_recall= recall_score(y_train, y_pred)  
+
+    # calculate recall validate
+    y_pred = knn.predict(X_validate)
+    out_of_sample_recall= recall_score(y_validate, y_pred)
+
+
+
+    output = {
+        'Model': 'KNN neighbor',
+        "specs":'neighbors =7, weights= uniform ',
+        "train_accuracy": in_sample_accuracy,
+        "validate_accuracy": out_of_sample_accuracy,
+        'train_recall': in_sample_recall,
+        'validate_recall': out_of_sample_recall
+    }
+
+    metrics.append(output)
+
+    # create the model    
+    logit = LogisticRegression(C=1000, random_state=123, fit_intercept=True,solver ='saga' )
+    # fit the model
+    logit.fit(X_train, y_train)
+
+    # accuracy on train
+    in_sample_accuracy = logit.score(X_train, y_train)
+    # accuracy on validate
+    out_of_sample_accuracy = logit.score(X_validate, y_validate)
+
+    # calculate recall train
+    y_pred = logit.predict(X_train)
+    in_sample_recall= recall_score(y_train, y_pred)  
+
+    # calculate recall validate
+    y_pred = logit.predict(X_validate)
+    out_of_sample_recall= recall_score(y_validate, y_pred)
+
+
+    output = {
+        'Model': 'Logistic Regression',
+        "specs":'solver = saga ',
+        "train_accuracy": in_sample_accuracy,
+        "validate_accuracy": out_of_sample_accuracy,
+        'train_recall': in_sample_recall,
+        'validate_recall': out_of_sample_recall
+    }
+
+    metrics.append(output)
+    metrics_df = pd.DataFrame(metrics)
+    return metrics_df
