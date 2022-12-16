@@ -1,18 +1,44 @@
 # Brain Stroke Classification Project
 
+____
 # Project Description:
 According to the Center for Disease and Prevention (CDC) Every 40 seconds, someone in the United States has a stroke. Every 3.5 minutes, someone dies of stroke. This project uses  parameters like gender, age, various diseases, and smoking status to predict if a patient had a stroke. Each row in the data provides relavant information about the patient.
+___
+___
+# Executive Summary:
+
+#### Goals
+
+
+To discover the drivers of stroke to predict to help our patients prevent a stroke occurance.
+#### Key Findings
+* 4.86% of the patient populatin has suffered a stroke
+* Patients wih heart disease have a larger increase in stroke rate than patients with hypertension
+
+* The patients age is a driver of stroke
+
+#### Takeaways
+* Top Model did not perform as expected, possible reason is data in imbalanced
+
+#### Recommendation
+In order to improve model more data collection and health information such as:
+
+* if the patients  family has a history of stroke or heart disease
+* Demographics of the patients 
+* Patients weight and height
+___
+___
 
 # Project Goal:
 Discover drivers of stroke.
 Use drivers to develop a machine learning model to predict weather or not a patient had a stroke.
-Use findings to see what preventitave measures if any can be taken to prevent a stroke.
-
+Use findings to see what preventative  measures if any can be taken to prevent a stroke.
+___
 # Initial Thoughts:
 My initial hypothesis is that hypertension driver of stroke.
-
+___
 # The Plan
-    * Aquire data from Kaggle
+    * Acquire data from Kaggle
 
     * Prepare data
 
@@ -29,17 +55,17 @@ My initial hypothesis is that hypertension driver of stroke.
         * Evaluate the best model on test data
         
     * Draw conclusions
-
+___
 # Data Dictionary
 
 |   Target Variable |Description|
-| ------------- | -------------: | 
+| :------------- | -------------: | 
 |       stroke    |  If the patient has a stroke or not. (1 = yes, 0 = no)     | 
-|
-|
+___
+___
 
 
-| Feature    | Description    | 
+ | Feature    | Description    | 
 | :------------- | -------------: | 
 |      id     |   unique identifier      | 
 |   gender       |    Gender of patient Male or Female or Other     | 
@@ -62,6 +88,23 @@ My initial hypothesis is that hypertension driver of stroke.
     3. Save file in cloned repository
     
     4. Run notebook
+---
 # Takeaways and Conclusions
+* 4.86% of the patient population  has suffered a stroke
+* Patients with hypertension have an increase in stroke rate
+* Patients with heart disease have an increase in stroke rate
+* Patients with heart disease have a larger increase in stroke rate than patients with hypertension
+* The male gender of our patients that have heart disease have a higher stroke rate than the female gender
+* The patients age is a driver of stroke
+* Patients who have been married have a slight increase in stroke rate.
 
+
+---
 # Recommendations
+In order to improve model more data collection and health information such as:
+
+* if the patients  family has a history of stroke or heart disease
+* Demographics of the patients 
+* Patients weight and height
+    
+Current top model is not ready to perform.
