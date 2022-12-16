@@ -12,7 +12,7 @@ ___
 
 To discover the drivers of stroke to help our patients prevent a stroke occurance.
 #### Key Findings
-* 4.86% of the patient populatin has suffered a stroke
+* 4.86% of the patient population has suffered a stroke
 * Patients wih heart disease have a larger increase in stroke rate than patients with hypertension
 
 * The patients age is a driver of stroke
