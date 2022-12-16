@@ -38,23 +38,26 @@ ___
 My initial hypothesis is that hypertension driver of stroke.
 ___
 # The Plan
-    * Acquire data from Kaggle
+* Acquire data from Kaggle
 
-    * Prepare data
+* Prepare data
 
-    * Explore data in search of drivers of stroke
+* Explore data in search of drivers of stroke
 
-    * Answer the following initial questions:
-        *
-        *
-        *
+* Answer the following initial questions:
+    * 1. What is the percent of patients who have a stroke?
+    * 2. Does the presense of hypertension increase the risk of stroke?
+    * 3. Are patients with a heart condition more at risk of stroke than patients with hypertension?
+    * 4. Controling for gender of a patient, does heart disease increases risk of stroke?
+    * 5. Is age a driver of stroke?
+    * 6. Do patients who have ever been married suffer more strokes than patients that have not been married?
 
-    * Use drivers identified in explore to build predictive models of different types
-        * Evaluate models on train and validate data
-        * Select the best model based on highest accuracy
-        * Evaluate the best model on test data
-        
-    * Draw conclusions
+* Use drivers identified in explore to build predictive models of different types
+    * Evaluate models on train and validate data
+    * Select the best model based on highest accuracy
+    * Evaluate the best model on test data
+    
+* Draw conclusions
 ___
 # Data Dictionary
 
