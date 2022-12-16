@@ -234,3 +234,53 @@ def models_metrics(X_train,y_train, X_validate, y_validate):
     metrics.append(output)
     metrics_df = pd.DataFrame(metrics)
     return metrics_df
+
+def test_metrics(X_train,y_train, X_validate, y_validate,X_test,y_test): 
+    '''
+    models_metrics takes in X_train,y_train, X_validate, y_validate and X_test, y_test
+    makes 4 models : Decision tree, 
+    fits models using train
+    calculates accuracy and recall for train and validate data  and X_test,y_test
+    returns metrics in a dataframe of models performance on train and validate data 
+    '''  
+    metrics= []
+    # make tree model
+    tree = DecisionTreeClassifier(max_depth=6, random_state=123)
+    # Fit the model (on train and only train)
+    tree = tree.fit(X_train, y_train)
+
+    # accuracy on train
+    in_sample_accuracy = tree.score(X_train, y_train)
+    # accuracy on validate
+    out_of_sample_accuracy = tree.score(X_validate, y_validate)
+    # accuracy on test
+    test_accuracy = tree.score(X_test, y_test)
+
+
+    # calculate recall train
+    y_pred = tree.predict(X_train)
+    in_sample_recall= recall_score(y_train, y_pred)  
+
+    # calculate recall validate
+    y_pred = tree.predict(X_validate)
+    out_of_sample_recall= recall_score(y_validate, y_pred)
+    
+    # calculate recall validate
+    y_pred = tree.predict(X_test)
+    test_recall= recall_score(y_test, y_pred)
+
+    output = {
+        'Model': 'Decision Tree',
+        "specs":'Max Depth = 6 ',
+        "train_accuracy": in_sample_accuracy,
+        "validate_accuracy": out_of_sample_accuracy,
+
+
+        'test_accuracy': test_accuracy,
+        'test_recall': test_recall
+    }
+    
+    metrics.append(output)
+    metrics_df = pd.DataFrame(metrics)
+
+    return metrics_df
