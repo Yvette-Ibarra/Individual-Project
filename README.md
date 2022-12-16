@@ -10,7 +10,7 @@ ___
 #### Goals
 
 
-To discover the drivers of stroke to predict to help our patients prevent a stroke occurance.
+To discover the drivers of stroke to help our patients prevent a stroke occurance.
 #### Key Findings
 * 4.86% of the patient populatin has suffered a stroke
 * Patients wih heart disease have a larger increase in stroke rate than patients with hypertension
@@ -23,9 +23,9 @@ To discover the drivers of stroke to predict to help our patients prevent a stro
 #### Recommendation
 In order to improve model more data collection and health information such as:
 
-* if the patients  family has a history of stroke or heart disease
+* The patients  family history of stroke or heart disease
 * Demographics of the patients 
-* Patients weight and height
+
 ___
 ___
 
@@ -45,7 +45,7 @@ ___
 * Explore data in search of drivers of stroke
 
 * Answer the following initial questions:
-    * 1. What is the percent of patients who have a stroke?
+    * 1.  What is the percent of patients who have suffered a stroke?
     * 2. Does the presense of hypertension increase the risk of stroke?
     * 3. Are patients with a heart condition more at risk of stroke than patients with hypertension?
     * 4. Controling for gender of a patient, does heart disease increases risk of stroke?
