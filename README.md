@@ -14,17 +14,18 @@ To discover the drivers of stroke to help our patients prevent a stroke occuranc
 #### Key Findings
 * 4.86% of the patient population has suffered a stroke
 * Patients wih heart disease have a larger increase in stroke rate than patients with hypertension
-
 * The patients age is a driver of stroke
 
-#### Takeaways
-* Top Model did not perform as expected, possible reason is data in imbalanced
 
-#### Recommendation
+
+# Recommendation
+* Help patients control medical conditions to reduce the chances of stroke
+* Give patients the tools and guidance to treat heart conditions
+* Encourage patients to keep track of their blood pressure and take appropriate medication when needed
+
 In order to improve model more data collection and health information such as:
-
-* The patients  family history of stroke or heart disease
-* Demographics of the patients 
+* Patients family history of stroke or heart disease
+* Demographics of the patients
 
 ___
 ___
@@ -35,7 +36,7 @@ Use drivers to develop a machine learning model to predict weather or not a pati
 Use findings to see what preventative  measures if any can be taken to prevent a stroke.
 ___
 # Initial Thoughts:
-My initial hypothesis is that hypertension driver of stroke.
+My initial hypothesis is that hypertension is a driver of stroke.
 ___
 # The Plan
 * Acquire data from Kaggle
@@ -74,14 +75,10 @@ ___
 |   gender       |    Gender of patient Male or Female or Other     | 
 | age|     age of the patient     | 
 |      hypertension    |     If a patient has hypertension  (1 = yes, 0 = no)  | 
-|      hear_disease     |     If a patient has any heart diseases  (1 = yes, 0 = no)  | 
+|      heart_disease     |     If a patient has any heart diseases  (1 = yes, 0 = no)  | 
 |       ever_married   |   If a patient has ever been married (1 = yes, 0 = no)      | 
-|    work_type       |    The work type of patient. *Children are under children category     | 
-|  residence_type        |     If a patient residence is  rural of urban   | 
-|   avg_glucose_level        |    average glucose level in blood     | 
-|     bmi     |   body mass index of patient      | 
-|   smoking_status       |    smoking status of patient * Unknown represent the information was unavailable     | 
-|          |         | 
+|Additional Features	| Encoded and values for categorical data and scaled versions continuous data
+
 
 # Steps to Reproduce
     1. Clone this repository
