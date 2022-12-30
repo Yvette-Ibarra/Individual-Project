@@ -1,4 +1,4 @@
-# Brain Stroke Classification Project
+# Stroke Classification Project
 
 ____
 # Project Description:
